@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="imgs/bookmaker.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <div class="container min-vh-100">
+                <h1 class="text-center py-2">Bookmarker</h1>
+
+                <div class="p-4 mt-3 bookmark-form">
+                    <h4 class="mb-4">
+                        <i class="fa-regular fa-square-plus"></i>
+                        Add New Bookmark
+                    </h4>
+
+                    <form>
+                        <div class="mb-3">
+                            <label for="bookName" class="fw-semibold pb-2">
+                                <i class="fa-solid fa-book-bookmark pe-2"></i>
+                                Site Name
+                            </label>
+                            <input oninput="validateName()" type="text" placeholder="Bookmark Name" id="bookName"
+                                class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookURL" class="fw-semibold pb-2">
+                                <i class="fa-solid fa-link pe-2"></i>
+                                Site URL
+                            </label>
+                            <input oninput="validateURL()" type="text" placeholder="Website URL" id="bookURL"
+                                class="form-control">
+                        </div>
+                        <button onclick="addBook()" type="button" class="btn my-btn px-5 w-100">
+                            <i class="fa-solid fa-plus"></i>
+                            Submit
+                        </button>
+                    </form>
+                </div>
+
+                <div class="down mt-5">
+                    <div class="position-relative mx-auto my-4 icon-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" placeholder="Search" class="form-control my-4 mx-auto" id="searchInput"
+                            oninput="searchBook()">
+                        </div>
+                    <table class="table table-striped my-table text-center">
+                    <thead>
+                        <tr>
+                            <th class="text-capitalize">index</th>
+                            <th class="text-capitalize">Website Name</th>
+                            <th class="text-capitalize">Visit</th>
+                            <th class="text-capitalize">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
